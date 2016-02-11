@@ -1,0 +1,11 @@
+language: java
+before_deploy:
+  - mvn clean install
+deploy:
+  provider: releases
+  api_key:
+    secure: "Fob89dr67V+8z3uP63HqkvFh1qKxzccfgi+n5ON2xZo928xuWrZdS9H7mFn6qmZbPDf2LQgmCB5QiTem2Eg/bOMq96VCbymGOK1ZAEYuQxbRWSi84YdocpPDecCxhh+DR6rvp15k20y9ZgsJ0SDMvi+3P7MXSJmeai96HkD5nS8Up0ZS1Ie6rrUowQnSfd4578mo0S89hNmagUBM3+V+nB3VkEZJf3yK7JxtSlLK7CrLxb2dae0KOHn3tskHnp8H3s8KhyGz6RSLSVih0k+sSqoLyoQ537GR5UAPoBzzbqwBUt4yPEtVESne6/iZX0tj9+fIscrDrHjFXzJyOys0kXB1cJt2wZgmavQVSrYyNdOOKdoLTHdNUhSd5qZulMKT7VSWtPfQDIsfR93831OYT++09gxRdXSeZYn/Ly2DMvndXtcw9VYZGiLobdoHb6g+Fnn3QhZFvpEhB8gfjE6+wkfw/RWg1LQ0sW65BS0hZloP0MWp8ncB5qRf0pTayM9kqKtJxRHYkVWzTjKBPDnFt4a2F2/6vM/g/HIuvGy3Oemvmj5lBUE3dQd+akfUCK3AbUKvTrvcRF9loB29eX4fsZSUFH73V882kMO1XdQZS7UjOciuPpn8tPNGSGIlSFQCuUzb54pOMMDLba7nedWMGOZvDFcma0TtDGUVrQ+marg="
+  file: "target/hon-lucene-synonyms.jar"
+  skip_cleanup: true
+  on:
+    tags: true
