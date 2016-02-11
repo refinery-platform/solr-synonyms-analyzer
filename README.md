@@ -1,3 +1,23 @@
+**This is just a hard-cloned repo of https://github.com/healthonnet/hon-lucene-synonyms**
+
+Why? Cloning the repo and adding it to Travis-CI to provide automatic builds failed because something is wrong with the original repository.
+Here's the error:
+```
+git clone https://github.com/healthonnet/hon-lucene-synonyms && cd hon-lucene-synonyms
+git add <SOMETHING>
+git tag -a 'v2.0.0' -m 'Whatever'
+cd ../
+git clone --depth=50 --branch=v2.0.0 https://github.com/refinery-platform/hon-lucene-synonyms.git hon-lucene-synonyms-2
+git checkout -qf <COMMIT-HASH-OF-LATEST-COMMIT>
+fatal: reference is not a tree: 9043856f2a89f9ed75b195acbbaddc53fd145820
+
+The command "git checkout -qf 9043856f2a89f9ed75b195acbbaddc53fd145820" failed and exited with 128 during .
+```
+
+Looking at `.git/refs/tags` reveiled that no reference for tag `v2.0.0` was available even though the tag was visible on GitHub.
+
+---
+
 Lucene/Solr Synonym-Expanding EDisMax Parser [![Build Status](https://travis-ci.org/healthonnet/hon-lucene-synonyms.svg)](https://travis-ci.org/healthonnet/hon-lucene-synonyms)
 =========================
 
