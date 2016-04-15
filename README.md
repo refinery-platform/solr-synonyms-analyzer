@@ -1,7 +1,10 @@
 **This is just a hard-cloned repo of https://github.com/healthonnet/hon-lucene-synonyms**
 
-Why? Cloning the repo and adding it to Travis-CI to provide automatic builds failed because something is wrong with the original repository.
-Here's the error:
+**Why?** 
+
+1. We want to attach builds automatically to a release to be able to skip the compilation step when provisioning our application. Therefore, we need to set up Travis-CI.
+2. Cloning the repo and adding it to Travis-CI failed because something is wrong with the original repository. See the error below:
+
 ```
 git clone https://github.com/healthonnet/hon-lucene-synonyms && cd hon-lucene-synonyms
 git add <SOMETHING>
